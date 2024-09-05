@@ -38,6 +38,8 @@ typedef signed   long long int khronos_ssize_t;
 typedef signed   long  int     khronos_ssize_t;
 #endif
 
+
+
 #define GLAPI extern
 
 /*

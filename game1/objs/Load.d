@@ -1,10 +1,10 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\kitty\\ducky-game\\ducky-game\\game1\\load.cpp",
+        "Source": "c:\\users\\kitty\\ducky-game\\game1\\load.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\users\\kitty\\ducky-game\\ducky-game\\game1\\load.hpp",
+            "c:\\users\\kitty\\ducky-game\\game1\\load.hpp",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\functional",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime.h",

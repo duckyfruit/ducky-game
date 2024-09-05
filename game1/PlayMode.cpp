@@ -1,15 +1,18 @@
 #include "PlayMode.hpp"
-#include "asst_pipeline.hpp"
-#include <functional> //for function code
-#include <iostream>
-#include <fstream>
-#include <string>
-
 //for the GL_ERRORS() macro:
 #include "gl_errors.hpp"
 
 //for glm::value_ptr() :
 #include <glm/gtc/type_ptr.hpp>
+
+#include "asst_pipeline.hpp"
+#include "data_path.hpp"
+#include <functional> //for function code
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
 
 #include <random>
 
@@ -168,38 +171,70 @@ PlayMode::PlayMode() {
 
 	//main character?
 
-	/* character sprites */
-	create_sprite("dist/frogs/greenFrogTL.png",7,34, ppu, false, false);
-	create_sprite("dist/frogs/greenFrogTR.png",7,35, ppu, true, false);
-	create_sprite("dist/frogs/greenFrogBL.png",7,32, ppu, true,false);
-	create_sprite("dist/frogs/greenFrogBR.png",7,33, ppu, true, false);
-	create_sprite("dist/frogs/highlightL.png",3,40, ppu, false, false);
-	create_sprite("dist/frogs/highlightR.png",3,41, ppu, true, false);
+	/* character sprites */ //FOR BUILDING THE GAME//
+	/*create_sprite("frogs/greenFrogTL.png",7,34, ppu, false, false);
+	create_sprite("frogs/greenFrogTR.png",7,35, ppu, true, false);
+	create_sprite("frogs/greenFrogBL.png",7,32, ppu, true,false);
+	create_sprite("frogs/greenFrogBR.png",7,33, ppu, true, false);
+	create_sprite("frogs/highlightL.png",3,40, ppu, false, false);
+	create_sprite("frogs/highlightR.png",3,41, ppu, true, false);
 
-	create_sprite("dist/frogs/greenFrogFullBL.png",7,46, ppu, true,false);
-	create_sprite("dist/frogs/greenFrogFullBR.png",7,47, ppu, true, false);
-	create_sprite("dist/frogs/greenFrogFullTL.png",7,48, ppu, true, false);
-	create_sprite("dist/frogs/greenFrogFullTR.png",7,49, ppu, true, false);
-	create_sprite("dist/frogs/highlightFullL.png",3,50, ppu, false, false);
-	create_sprite("dist/frogs/highlightFullR.png",3,51, ppu, false, false);
-
-
-	create_sprite("dist/frogs/greenFrogCrouchBL.png",7,52, ppu, true,false);
-	create_sprite("dist/frogs/greenFrogCrouchBR.png",7,53, ppu, true, false);
+	create_sprite("frogs/greenFrogFullBL.png",7,46, ppu, true,false);
+	create_sprite("frogs/greenFrogFullBR.png",7,47, ppu, true, false);
+	create_sprite("frogs/greenFrogFullTL.png",7,48, ppu, true, false);
+	create_sprite("frogs/greenFrogFullTR.png",7,49, ppu, true, false);
+	create_sprite("frogs/highlightFullL.png",3,50, ppu, false, false);
+	create_sprite("frogs/highlightFullR.png",3,51, ppu, false, false);
 
 
-	create_sprite("dist/cookie/cookieBL.png",5,42, ppu, false, false);
-	create_sprite("dist/cookie/cookieBR.png",5,43, ppu, true, false);
-	create_sprite("dist/cookie/cookieTL.png",5,44, ppu, true, false);
-	create_sprite("dist/cookie/cookieTR.png",5,45, ppu, true, false);
+	create_sprite("frogs/greenFrogCrouchBL.png",7,52, ppu, true,false);
+	create_sprite("frogs/greenFrogCrouchBR.png",7,53, ppu, true, false);
 
 
-	create_sprite("dist/cookie/sugarcookieBL.png",6,54, ppu, false, false);
-	create_sprite("dist/cookie/sugarcookieBR.png",6,55, ppu, true, false);
-	create_sprite("dist/cookie/sugarcookieTL.png",6,56, ppu, true, false);
-	create_sprite("dist/cookie/sugarcookieTR.png",6,57, ppu, true, false);
+	create_sprite("cookie/cookieBL.png",5,42, ppu, false, false);
+	create_sprite("cookie/cookieBR.png",5,43, ppu, true, false);
+	create_sprite("cookie/cookieTL.png",5,44, ppu, true, false);
+	create_sprite("cookie/cookieTR.png",5,45, ppu, true, false);
+
+
+	create_sprite("cookie/sugarcookieBL.png",6,54, ppu, false, false);
+	create_sprite("cookie/sugarcookieBR.png",6,55, ppu, true, false);
+	create_sprite("cookie/sugarcookieTL.png",6,56, ppu, true, false);
+	create_sprite("cookie/sugarcookieTR.png",6,57, ppu, true, false); */
 	//create_sprite("frogs/shadeL.png",4,38, ppu, false, false);
 	//create_sprite("frogs/shadeR.png",4,39, ppu, true, false);
+
+
+	 //FOR VISUAL STUDIO CODE RUNNING
+	create_sprite(data_path("frogs/greenFrogTL.png"),7,34, ppu, false, false);
+	create_sprite(data_path("frogs/greenFrogTR.png"),7,35, ppu, true, false);
+	create_sprite(data_path("frogs/greenFrogBL.png"),7,32, ppu, true,false);
+	create_sprite(data_path("frogs/greenFrogBR.png"),7,33, ppu, true, false);
+	create_sprite(data_path("frogs/highlightL.png"),3,40, ppu, false, false);
+	create_sprite(data_path("frogs/highlightR.png"),3,41, ppu, true, false);
+
+	create_sprite(data_path("frogs/greenFrogFullBL.png"),7,46, ppu, true,false);
+	create_sprite(data_path("frogs/greenFrogFullBR.png"),7,47, ppu, true, false);
+	create_sprite(data_path("frogs/greenFrogFullTL.png"),7,48, ppu, true, false);
+	create_sprite(data_path("frogs/greenFrogFullTR.png"),7,49, ppu, true, false);
+	create_sprite(data_path("frogs/highlightFullL.png"),3,50, ppu, false, false);
+	create_sprite(data_path("frogs/highlightFullR.png"),3,51, ppu, false, false);
+
+
+	create_sprite(data_path("frogs/greenFrogCrouchBL.png"),7,52, ppu, true,false);
+	create_sprite(data_path("frogs/greenFrogCrouchBR.png"),7,53, ppu, true, false);
+
+
+	create_sprite(data_path("cookie/cookieBL.png"),5,42, ppu, false, false);
+	create_sprite(data_path("cookie/cookieBR.png"),5,43, ppu, true, false);
+	create_sprite(data_path("cookie/cookieTL.png"),5,44, ppu, true, false);
+	create_sprite(data_path("cookie/cookieTR.png"),5,45, ppu, true, false);
+
+
+	create_sprite(data_path("cookie/sugarcookieBL.png"),6,54, ppu, false, false);
+	create_sprite(data_path("cookie/sugarcookieBR.png"),6,55, ppu, true, false);
+	create_sprite(data_path("cookie/sugarcookieTL.png"),6,56, ppu, true, false);
+	create_sprite(data_path("cookie/sugarcookieTR.png"),6,57, ppu, true, false); 
 
 	/* character sprites */
 
@@ -309,8 +344,8 @@ void PlayMode::update(float elapsed) {
 	cookiecooldown += elapsed;
 	
 
-	if(totalcookies > 10)
-	exit(0);
+	//if(totalcookies > 10)
+	//exit(0);
 	
 	
 	if (left.pressed)
@@ -363,7 +398,7 @@ void PlayMode::update(float elapsed) {
 	
 	}
 
-	if((rand()%100 == 0) && (cookiecooldown > 10.0f)) //1/100 chance to spawn another cookie
+	if((rand()%100 == 0) && (cookiecooldown > 10.0f) && (totalcookies < 14)) //1/100 chance to spawn another cookie
 	{
 		totalcookies += 1;
 		cookiecooldown = 0.0f;

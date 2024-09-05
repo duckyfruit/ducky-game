@@ -18,10 +18,10 @@ if you make a 16x16 sprite for example, you can split each part into 4 8x8 image
 The pipeline first reads in the path to the image and saves the data in a binary text file. Then the palette information and pixel information is extracted into separate vectors. If there are more than 4 colors, the program will throw an error. After getting the palette, it is put into the palette ppu at an index specified by the game designer - if the palette already exists for this given image there is an option to use that palette index instead of creating a new palette index. Next a tile map is created for the 8x8 image and saved into the tile map at an index specified by the game designer - if the tile map already exists for this given image there is an option to use that tile map instead of creating a new tile map index.
 
 
-[link](dist/frogs/greenFrogBR.png)
-[link](dist/frogs/greenFrogBL.png)
-[link](dist/frogs/greenFrogTR.png)
-[link](dist/frogs/greenFrogTL.png)
+[frog 8x8 1](dist/frogs/greenFrogBR.png)
+[frog 8x8 2](dist/frogs/greenFrogBL.png)
+[frog 8x8 3](dist/frogs/greenFrogTR.png)
+[frog 8x8 4](dist/frogs/greenFrogTL.png)
 
 example of a full sprite
 
