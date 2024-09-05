@@ -27,47 +27,18 @@ void check_duplicate(std::vector<glm::u8vec4> mycolors, std::vector<glm::u8vec4>
 		for(uint32_t x = uint32_t(width*8); x < uint32_t(width*8 + 8); x++)
 		{
 			assert((x +  ppu.BackgroundWidth * y) < pixels.size()); //should not exceed this size
-			//print_color(pixels[x +  ppu.BackgroundWidth * y]);
 			place_bit(pixels[x +  ppu.BackgroundWidth * y], mycolors, x, y, ppu.tile_table[tileindex + indexcounter].bit0, ppu.tile_table[tileindex + indexcounter].bit1);
 		}
 	}
-	for(uint32_t y = 0; y < 8; y++)
-	{
-		std::cout << uint32_t(ppu.tile_table[tileindex + indexcounter].bit0[y]);
-		std::cout << uint32_t(ppu.tile_table[tileindex + indexcounter].bit1[y]);
-	}
-	std::cout << "\n";
 
 	for(uint32_t x  = tileindex; x < uint32_t(tileindex + indexcounter); x++)
 	{
 		if((ppu.tile_table[tileindex + indexcounter].bit0 == ppu.tile_table[x].bit0) && (ppu.tile_table[tileindex + indexcounter].bit1 == ppu.tile_table[x].bit1) && (uint32_t(tileindex + indexcounter) != x))
 		{
-			/*for(uint32_t y = 0; y < 8; y++)
-			{
-				std::cout << uint32_t(ppu.tile_table[tileindex + indexcounter].bit0[y]);
-				std::cout << uint32_t(ppu.tile_table[tileindex + indexcounter].bit1[y]);
-			}
-			std::cout << "\n";
 
-			for(uint32_t y = 0; y < 8; y++)
-			{
-				std::cout << uint32_t(ppu.tile_table[x].bit0[y]);
-				std::cout << uint32_t(ppu.tile_table[x].bit1[y]);
-			}
-			std::cout << "\n";
-			std::cout << "\n"; 
- 
-			
-			/*for(uint32_t y = 0; y < 8; y++)
-			{
-				ppu.tile_table[tileindex + indexcounter].bit0[y] = 0;
-				ppu.tile_table[tileindex + indexcounter].bit1[y] = 0;
-			} */
-			
 			//map to this tile
 			backgroundtiles[backgroundcounter] = uint16_t(x) | (uint16_t(paletteindex) << 8);
-			//std::cout << backgroundtiles[backgroundcounter];
-			//std::cout << " ";
+
 			return;
 		}
 		
@@ -86,12 +57,6 @@ int read_tiles(std::string path, int paletteindex, int tileindex, int width, int
 	std::vector<glm::u8vec4> mycolors;
 	std::vector<glm::u8vec4> colorindex;
 
-
-	/*for(int x = 0; x< pixels.size(); x++)
-	{
-		print_color(pixels[x]);
-	} */
-
 	if(!paletteloaded)
 	{
 		mycolors = find_colors(txtfile);
@@ -109,10 +74,6 @@ int read_tiles(std::string path, int paletteindex, int tileindex, int width, int
 			mycolors.emplace_back(ppu.palette_table[paletteindex][x]);
 
 	}
-	print_color(mycolors[0]);
-	print_color( mycolors[1]);
-	print_color( mycolors[2]);
-	print_color(mycolors[3]);
 
 
 	int indexcounter = 0;
@@ -123,16 +84,11 @@ int read_tiles(std::string path, int paletteindex, int tileindex, int width, int
 		for(uint32_t a = 0; a < (uint32_t(width)); a++ )
 		{
 			check_duplicate(mycolors,pixels, backgroundtiles, ppu,a,b,tileindex,indexcounter, backgroundcounter, paletteindex);
-			std::cout << indexcounter;
-			std::cout << " ";
 			indexcounter++;
 			backgroundcounter++;
 		}
 	}
 
-	std::cout << indexcounter;
-	std::cout << " ";
-	std::cout << backgroundcounter;
 
 	return tileindex + indexcounter;
 
@@ -396,7 +352,7 @@ void PlayMode::update(float elapsed) {
 		timer += elapsed;
 		if((timer > eattimer))
 		{
-			std::cout << numcookie.size();
+			
 			cookievec[numcookie[0]].x = ((rand()) / static_cast <float> (RAND_MAX)) * (ppu.BackgroundWidth/2 *8 - 16);
 			cookievec[numcookie[0]].y = float((ppu.BackgroundHeight/2)*8);
 			numcookie.erase(numcookie.begin());

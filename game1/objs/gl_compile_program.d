@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\kitty\\ducky-game\\game1\\gl_compile_program.cpp",
+        "Source": "c:\\users\\kitty\\ducky-game\\ducky-game\\game1\\gl_compile_program.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\users\\kitty\\ducky-game\\game1\\gl_compile_program.hpp",
-            "c:\\users\\kitty\\ducky-game\\game1\\gl.hpp",
+            "c:\\users\\kitty\\ducky-game\\ducky-game\\game1\\gl_compile_program.hpp",
+            "c:\\users\\kitty\\ducky-game\\ducky-game\\game1\\gl.hpp",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\stdint.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\sal.h",

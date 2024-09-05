@@ -147,7 +147,6 @@ std::vector<glm::u8vec4> find_colors(std::string path) //returns a vector of 4 R
 
 		if(count > 3) //should be 4 elements in the array
 		{
-			//print_color(currColor);
 			for(uint32_t x = 0; x < myColors.size(); x++)
 			{
 				if(currColor == myColors[x])
@@ -200,13 +199,10 @@ std::vector<glm::u8vec4> get_pixels(std::string path)
 
 	while (readfile >> str)
 	{
-		//std::cout << uint32_t(currColor.z );
-		//std::cout << " \n";
 		assert(count <= 4); //count should not exceed 4 --> for Red, Blue, Green, Alpha Channel
 
 		if(count > 3)
 		{
-			//print_color(currColor);
 			glm::u8vec4 newColor = currColor;
 			pixels.emplace_back(newColor);
 			currColor.w = str;
