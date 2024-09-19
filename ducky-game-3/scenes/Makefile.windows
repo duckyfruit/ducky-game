@@ -1,0 +1,13 @@
+
+BLENDER="C:\Program Files\Blender Foundation\Blender 4.2\blender.exe"
+DIST=../dist
+
+all : \
+    $(DIST)/alien.pnct \
+    $(DIST)/alien.scene \
+
+$(DIST)/alien.scene : alien.blend export-scene.py
+    $(BLENDER) --background --python export-scene.py -- "alien.blend:Main" "$(DIST)/alien.scene"
+
+$(DIST)/alien.pnct : alien.blend export-meshes.py
+    $(BLENDER) --background --python export-meshes.py -- "alien.blend:Main" "$(DIST)/alien.pnct" 
